@@ -1,0 +1,11 @@
+console.log ('INFO');
+let a = 2;
+console.info ('Вывод значения "а"');
+console.log (a);
+console.warn ('ВНИМАНИЕ!!!!');
+console.group('Объединенные данные ');
+console.log (a);
+console.warn ('Предупреждение!!!');
+console.groupEnd();
+console.error ('Обнаружена ошибка!');
+console.table (["троллейбус", "Трамвай", "Автобус"]);
