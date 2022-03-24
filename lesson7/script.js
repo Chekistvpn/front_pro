@@ -25,3 +25,13 @@ function getSymbolIndex(paramString, anySymbol) {
 const anySymbol = "f";
 const paramString = "acergf";
 console.log("Индекс первого найденного символа", anySymbol, "равен", getSymbolIndex(paramString, anySymbol));
+
+//Задача №3 (Написать функцию, которая получает количество четных цифр в числе)
+console.info("Задача №3");
+function getNumberOfEven(paramNumber) {
+  paramNumber = paramNumber.toString();
+  let count = 0;
+  for (let i = 0; i < paramNumber.length; i++) if (paramNumber.charAt(i) % 2 === 0) count += 1;
+  return count;
+}
+console.log(getNumberOfEven(34343434));
