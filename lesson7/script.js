@@ -34,4 +34,20 @@ function getNumberOfEven(paramNumber) {
   for (let i = 0; i < paramNumber.length; i++) if (paramNumber.charAt(i) % 2 === 0) count += 1;
   return count;
 }
-console.log(getNumberOfEven(34343434));
+console.log("Количество четных цифр в числе = " + getNumberOfEven(34343434));
+
+//Массивы
+//Задача №1 "Реализация forEach"
+console.info("Задача №1 <Реализация forEach>");
+function myForEach(anyArr, funcCallBack) {
+  for (let i = 0; i < anyArr.length; i++) {
+    funcCallBack(anyArr[i], i, anyArr);
+  }
+}
+function logArrayElements(element, index) {
+  console.log("arr[" + index + "] = " + element);
+};
+const arr = [2, 5, 7, 9, 1, 3, 8, 11];
+myForEach(arr, logArrayElements);
+//Задача №2 "Реализация map"
+console.info("Задача №2 <Реализация map>");
