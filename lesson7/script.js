@@ -52,7 +52,7 @@ myForEach(arr, logArrayElements);
 
 //Задача №2 "Реализация map"
 console.info("Задача №2 <Реализация map>");
-function myMap (anyArrMap, funcCallBackMap) {
+function myMap(anyArrMap, funcCallBackMap) {
   let newArray = [];
   for (let i = 0; i < anyArrMap.length; i++) {
     newArray.push(funcCallBackMap(anyArrMap[i], i, anyArrMap));
@@ -64,3 +64,23 @@ console.log("Новый массив с использованием мар:", m
 
 //Задача №3 "Реализация filter"
 console.info("Задача №3 <Реализация filter>");
+function myFilter(anyArrFilter, funcCallBackFilter) {
+  const filteredArray = [];
+  for (let i = 0; i < anyArrFilter.length; i++) {
+    if (funcCallBackFilter(anyArrFilter[i], i, anyArrFilter)) {
+      filteredArray.push(anyArrFilter[i]);
+    }
+  }
+  return filteredArray;
+}
+const users = [
+  { name: "Peter", age: 39 },
+  { name: "Denis", age: 18 },
+  { name: "Serhii", age: 45 },
+  { name: "Mike", age: 16 },
+  { name: "Ostap", age: 28 },
+];
+console.log("Новый массив с использованием filter:", myFilter(users, (user) => user.age > 20));
+
+//Задача №4 "Реализация some"
+console.info("Задача №4 <Реализация some>");
