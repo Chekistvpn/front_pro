@@ -11,6 +11,7 @@ function isSymbolPresentInString(dataString, symbol) {
 const symbol = "c";
 const dataString = "acergf";
 console.log(isSymbolPresentInString(dataString, symbol));
+console.log ("***************")
 
 //Задача №2 (Написать функцию, которая возвращает индекс первого найденного символа в строке, или -1 если символ не найден)
 console.info("Задача №2");
@@ -25,6 +26,7 @@ function getSymbolIndex(paramString, anySymbol) {
 const anySymbol = "f";
 const paramString = "acergf";
 console.log("Индекс первого найденного символа", anySymbol, "равен", getSymbolIndex(paramString, anySymbol));
+console.log ("***************")
 
 //Задача №3 (Написать функцию, которая получает количество четных цифр в числе)
 console.info("Задача №3");
@@ -35,6 +37,7 @@ function getNumberOfEven(paramNumber) {
   return count;
 }
 console.log("Количество четных цифр в числе = " + getNumberOfEven(34343434));
+console.log ("***************")
 
 //Массивы
 //Задача №1 "Реализация forEach"
@@ -49,6 +52,7 @@ function logArrayElements(element, index) {
 };
 const arr = [2, 5, 7, 9, 1, 3, 8, 11];
 myForEach(arr, logArrayElements);
+console.log ("***************")
 
 //Задача №2 "Реализация map"
 console.info("Задача №2 <Реализация map>");
@@ -61,6 +65,7 @@ function myMap(anyArrMap, funcCallBackMap) {
 }
 const arr2 = [7, 3, -5, 8, 11, 3, 0, 1, 4];
 console.log("Новый массив с использованием мар:", myMap(arr2, (arr2) => arr2 * 4));
+console.log ("***************")
 
 //Задача №3 "Реализация filter"
 console.info("Задача №3 <Реализация filter>");
@@ -81,6 +86,31 @@ const users = [
   { name: "Ostap", age: 28 },
 ];
 console.log("Новый массив с использованием filter:", myFilter(users, (user) => user.age > 20));
+console.log ("***************")
 
 //Задача №4 "Реализация some"
 console.info("Задача №4 <Реализация some>");
+function mySome(anyArrSome, funcCallBackSome) {
+  for (let i = 0; i < anyArrSome.length; i++) {
+    if (funcCallBackSome.call(anyArrSome[i], i, anyArrSome)) {
+      return true;
+    }
+  }
+  return false;
+}
+const arrSome = [7, 3, 5, 8, 11, 3, 0, 1, 4];
+console.log("Функция mySome выводит:", mySome(arrSome, (arrSome) => arrSome > 14));
+console.log ("***************")
+
+//Задача №5 "Реализация every"
+console.info("Задача №5 <Реализация every>");
+function myEvery(anyArrEvery, funcCallBackEvery, thisArg) {
+  for (let i = 0; i < anyArrEvery.length; i++) {
+    if (!funcCallBackEvery.call(thisArg, anyArrEvery[i], i, anyArrEvery)) {
+      return false;
+    }
+  }
+  return true;
+}
+const arrEvery = [7, 3, 5, 8, 11, 3, 15, 1, 4];
+console.log("Функция myEvery выводит:", myEvery(arrEvery, (arrEvery) => arrEvery > 0));
