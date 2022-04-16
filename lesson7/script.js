@@ -49,5 +49,18 @@ function logArrayElements(element, index) {
 };
 const arr = [2, 5, 7, 9, 1, 3, 8, 11];
 myForEach(arr, logArrayElements);
+
 //Задача №2 "Реализация map"
 console.info("Задача №2 <Реализация map>");
+function myMap (anyArrMap, funcCallBackMap) {
+  let newArray = [];
+  for (let i = 0; i < anyArrMap.length; i++) {
+    newArray.push(funcCallBackMap(anyArrMap[i], i, anyArrMap));
+  }
+  return newArray;
+}
+const arr2 = [7, 3, -5, 8, 11, 3, 0, 1, 4];
+console.log("Новый массив с использованием мар:", myMap(arr2, (arr2) => arr2 * 4));
+
+//Задача №3 "Реализация filter"
+console.info("Задача №3 <Реализация filter>");
