@@ -92,21 +92,21 @@ console.log ("***************")
 console.info("Задача №4 <Реализация some>");
 function mySome(anyArrSome, funcCallBackSome) {
   for (let i = 0; i < anyArrSome.length; i++) {
-    if (funcCallBackSome.call(anyArrSome[i], i, anyArrSome)) {
+    if (funcCallBackSome(anyArrSome[i])) {
       return true;
     }
   }
   return false;
 }
 const arrSome = [7, 3, 5, 8, 11, 3, 0, 1, 4];
-console.log("Функция mySome выводит:", mySome(arrSome, (arrSome) => arrSome > 14));
+console.log("Функция mySome выводит:", mySome(arrSome, (arrSome) => arrSome > 4));
 console.log ("***************")
 
 //Задача №5 "Реализация every"
 console.info("Задача №5 <Реализация every>");
-function myEvery(anyArrEvery, funcCallBackEvery, thisArg) {
+function myEvery(anyArrEvery, funcCallBackEvery) {
   for (let i = 0; i < anyArrEvery.length; i++) {
-    if (!funcCallBackEvery.call(thisArg, anyArrEvery[i], i, anyArrEvery)) {
+    if (!funcCallBackEvery(anyArrEvery[i])) {
       return false;
     }
   }
